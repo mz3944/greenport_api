@@ -8,6 +8,7 @@ REST API for accessing ETH based smart contract for Greenport yourself token.
 
 - Run the following commands from the terminal:
     ```sh
+    npm install
     geth --testnet --rpc --rpcport=8545 console
     personal.newAccount('your_password')
     ```
