@@ -2,7 +2,7 @@ var express = require('express')
 var Web3 = require('web3')
 var abi = require('./abi');
 
-var adminAddress = '0x951803ab7fba9e8f9d6c3ac06b1fd2400e56d0bf';
+var adminAddress = '0x8233148e45b25c84a64bfcd2b082b4c1de064c4f';
 var contractAddress = '0x6bCfd6181a6A4C9C9ad243637A43337058bbC64f';
 
 if (typeof web3 !== 'undefined') {
@@ -72,9 +72,8 @@ app.get('/user/:address/balance', function(req, res) {
 
 // User setters
 
-app.get('/user/:address/register', function(req, res) {
-  var address = req.params.address;
-  res.json(contract.registerNewUser.call(address));
+app.get('/user/new', function(req, res) {
+  res.json(contract.registerNewUser.call());
 })
 app.get('/user/:address/transfer?toAddress=:toAddress&amount=:amount', function(req, res) {
   var fromAddress = req.params.address;
