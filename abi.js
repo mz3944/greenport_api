@@ -1,83 +1,330 @@
-module.exports.abiArray = [
-  {
-    "constant": false,
-    "inputs": [
-      {
-        "name": "rate",
-        "type": "uint256"
-      }],
-    "name": "setRate",
-    "outputs": [],
-    "type": "function"
-  },
-  {
-    "constant": true,
-    "inputs": [],
-    "name": "kWh_rate",
-    "outputs": [
-      {
-        "name": "",
-        "type": "uint256"
-      }],
-    "type": "function"
-  },
-  {
-    "constant": false,
-    "inputs": [
-      {
-        "name": "kwh",
-        "type": "uint256"
-      }],
-    "name": "sellEnergy",
-    "outputs": [],
-    "type": "function"
-  },
-  {
-    "constant": false,
-    "inputs": [],
-    "name": "getEnergyAccount",
-    "outputs": [
-      {
-        "name": "kwh",
-        "type": "uint256"
-      }],
-    "type": "function"
-  },
-  {
-    "constant": false,
-    "inputs": [],
-    "name": "getCoinAccount",
-    "outputs": [
-      {
-        "name": "coin",
-        "type": "uint256"
-      }],
-    "type": "function"
-  },
-  {
-    "constant": true,
-    "inputs": [],
-    "name": "owner",
-    "outputs": [
-      {
-        "name": "",
-        "type": "address"
-      }],
-    "type": "function"
-  },
-  {
-    "constant": false,
-    "inputs": [
-      {
-        "name": "coin",
-        "type": "uint256"
-      }],
-    "name": "buyEnergy",
-    "outputs": [],
-    "type": "function"
-  },
-  {
-    "inputs": [],
-    "type": "constructor"
-  }
-];
+module.exports.abiArray = [{
+	"constant": false,
+	"inputs": [{
+		"name": "_to",
+		"type": "uint256"
+	}, {
+		"name": "_value",
+		"type": "int256"
+	}, {
+		"name": "_userID",
+		"type": "uint256"
+	}],
+	"name": "transfer",
+	"outputs": [{
+		"name": "success",
+		"type": "bool"
+	}],
+	"payable": false,
+	"stateMutability": "nonpayable",
+	"type": "function"
+}, {
+	"constant": true,
+	"inputs": [],
+	"name": "name",
+	"outputs": [{
+		"name": "tokenName",
+		"type": "string",
+		"value": "TREE"
+	}],
+	"payable": false,
+	"stateMutability": "view",
+	"type": "function"
+}, {
+	"constant": false,
+	"inputs": [{
+		"name": "_administrator",
+		"type": "address"
+	}, {
+		"name": "_administrationRights",
+		"type": "bool"
+	}],
+	"name": "appointAdministrator",
+	"outputs": [],
+	"payable": false,
+	"stateMutability": "nonpayable",
+	"type": "function"
+}, {
+	"constant": true,
+	"inputs": [],
+	"name": "totalSupply",
+	"outputs": [{
+		"name": "",
+		"type": "int256",
+		"value": "297200"
+	}],
+	"payable": false,
+	"stateMutability": "view",
+	"type": "function"
+}, {
+	"constant": true,
+	"inputs": [],
+	"name": "registrationCredits",
+	"outputs": [{
+		"name": "",
+		"type": "int256",
+		"value": "1000"
+	}],
+	"payable": false,
+	"stateMutability": "view",
+	"type": "function"
+}, {
+	"constant": false,
+	"inputs": [{
+		"name": "_userID",
+		"type": "uint256"
+	}, {
+		"name": "_valuesToAdd",
+		"type": "int256"
+	}],
+	"name": "positiveValues",
+	"outputs": [],
+	"payable": false,
+	"stateMutability": "nonpayable",
+	"type": "function"
+}, {
+	"constant": true,
+	"inputs": [],
+	"name": "decimals",
+	"outputs": [{
+		"name": "tokenDecimals",
+		"type": "uint8",
+		"value": "2"
+	}],
+	"payable": false,
+	"stateMutability": "view",
+	"type": "function"
+}, {
+	"constant": false,
+	"inputs": [{
+		"name": "_userID",
+		"type": "uint256"
+	}, {
+		"name": "_valuesToAdd",
+		"type": "int256"
+	}],
+	"name": "negativeValues",
+	"outputs": [],
+	"payable": false,
+	"stateMutability": "nonpayable",
+	"type": "function"
+}, {
+	"constant": true,
+	"inputs": [{
+		"name": "",
+		"type": "uint256"
+	}],
+	"name": "users",
+	"outputs": [{
+		"name": "negativeValues",
+		"type": "int256",
+		"value": "0"
+	}, {
+		"name": "positiveValues",
+		"type": "int256",
+		"value": "0"
+	}, {
+		"name": "lastNegativeValues",
+		"type": "int256",
+		"value": "1000"
+	}, {
+		"name": "lastPositiveValues",
+		"type": "int256",
+		"value": "100000"
+	}, {
+		"name": "currentDelta",
+		"type": "int256",
+		"value": "0"
+	}, {
+		"name": "averageDelta",
+		"type": "int256",
+		"value": "99000"
+	}, {
+		"name": "monthCounter",
+		"type": "int256",
+		"value": "1"
+	}],
+	"payable": false,
+	"stateMutability": "view",
+	"type": "function"
+}, {
+	"constant": false,
+	"inputs": [{
+		"name": "_factor",
+		"type": "int256"
+	}],
+	"name": "setDeltaCreditAwardFactor",
+	"outputs": [],
+	"payable": false,
+	"stateMutability": "nonpayable",
+	"type": "function"
+}, {
+	"constant": true,
+	"inputs": [{
+		"name": "",
+		"type": "uint256"
+	}],
+	"name": "balances",
+	"outputs": [{
+		"name": "",
+		"type": "int256",
+		"value": "198000"
+	}],
+	"payable": false,
+	"stateMutability": "view",
+	"type": "function"
+}, {
+	"constant": false,
+	"inputs": [],
+	"name": "registerNewUser",
+	"outputs": [{
+		"name": "userIdentifier",
+		"type": "uint256"
+	}],
+	"payable": false,
+	"stateMutability": "nonpayable",
+	"type": "function"
+}, {
+	"constant": true,
+	"inputs": [],
+	"name": "numberOfUsers",
+	"outputs": [{
+		"name": "",
+		"type": "uint256",
+		"value": "2"
+	}],
+	"payable": false,
+	"stateMutability": "view",
+	"type": "function"
+}, {
+	"constant": true,
+	"inputs": [],
+	"name": "symbol",
+	"outputs": [{
+		"name": "tokenSymbol",
+		"type": "string",
+		"value": "🌳α"
+	}],
+	"payable": false,
+	"stateMutability": "view",
+	"type": "function"
+}, {
+	"constant": false,
+	"inputs": [{
+		"name": "_amount",
+		"type": "int256"
+	}],
+	"name": "setRegistrationCreditsAmount",
+	"outputs": [],
+	"payable": false,
+	"stateMutability": "nonpayable",
+	"type": "function"
+}, {
+	"constant": true,
+	"inputs": [{
+		"name": "_tokenOwner",
+		"type": "uint256"
+	}],
+	"name": "balanceOf",
+	"outputs": [{
+		"name": "accountBalance",
+		"type": "int256",
+		"value": "100000"
+	}],
+	"payable": false,
+	"stateMutability": "view",
+	"type": "function"
+}, {
+	"constant": true,
+	"inputs": [],
+	"name": "deltaCreditAwardFactor",
+	"outputs": [{
+		"name": "",
+		"type": "int256",
+		"value": "2"
+	}],
+	"payable": false,
+	"stateMutability": "view",
+	"type": "function"
+}, {
+	"constant": false,
+	"inputs": [{
+		"name": "newOwner",
+		"type": "address"
+	}],
+	"name": "transferOwnership",
+	"outputs": [],
+	"payable": false,
+	"stateMutability": "nonpayable",
+	"type": "function"
+}, {
+	"constant": false,
+	"inputs": [],
+	"name": "assignCredits",
+	"outputs": [],
+	"payable": false,
+	"stateMutability": "nonpayable",
+	"type": "function"
+}, {
+	"inputs": [{
+		"name": "_name",
+		"type": "string",
+		"index": 0,
+		"typeShort": "string",
+		"bits": "",
+		"displayName": "&thinsp;<span class=\"punctuation\">_</span>&thinsp;name",
+		"template": "elements_input_string"
+	}, {
+		"name": "_symbol",
+		"type": "string",
+		"index": 1,
+		"typeShort": "string",
+		"bits": "",
+		"displayName": "&thinsp;<span class=\"punctuation\">_</span>&thinsp;symbol",
+		"template": "elements_input_string"
+	}, {
+		"name": "_decimals",
+		"type": "uint8",
+		"index": 2,
+		"typeShort": "uint",
+		"bits": "8",
+		"displayName": "&thinsp;<span class=\"punctuation\">_</span>&thinsp;decimals",
+		"template": "elements_input_uint"
+	}, {
+		"name": "_startingSupply",
+		"type": "int256",
+		"index": 3,
+		"typeShort": "int",
+		"bits": "256",
+		"displayName": "&thinsp;<span class=\"punctuation\">_</span>&thinsp;starting Supply",
+		"template": "elements_input_int"
+	}, {
+		"name": "_initialOwner",
+		"type": "address",
+		"index": 4,
+		"typeShort": "address",
+		"bits": "",
+		"displayName": "&thinsp;<span class=\"punctuation\">_</span>&thinsp;initial Owner",
+		"template": "elements_input_address"
+	}],
+	"payable": false,
+	"stateMutability": "nonpayable",
+	"type": "constructor"
+}, {
+	"anonymous": false,
+	"inputs": [{
+		"indexed": true,
+		"name": "from",
+		"type": "uint256"
+	}, {
+		"indexed": true,
+		"name": "to",
+		"type": "uint256"
+	}, {
+		"indexed": false,
+		"name": "value",
+		"type": "int256"
+	}],
+	"name": "Transfer",
+	"type": "event"
+}];
