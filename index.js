@@ -3,7 +3,7 @@ var Web3 = require('web3')
 var abi = require('./abi');
 
 var adminAddress = '0x8233148e45b25c84a64bfcd2b082b4c1de064c4f';
-var contractAddress = '0x6bCfd6181a6A4C9C9ad243637A43337058bbC64f';
+var contractAddress = '0x27330504c2c8Ef269CB5A4f3441B48F06FBC04e8';
 
 if (typeof web3 !== 'undefined') {
   web3 = new Web3(web3.currentProvider);
