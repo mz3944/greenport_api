@@ -2,7 +2,7 @@ var express = require('express')
 var Web3 = require('web3')
 var abi = require('./abi');
 
-var adminAddress = '0x8233148e45b25c84a64bfcd2b082b4c1de064c4f';
+var adminAddress = 'your_admin_address';
 var contractAddress = '0x27330504c2c8Ef269CB5A4f3441B48F06FBC04e8';
 
 if (typeof web3 !== 'undefined') {

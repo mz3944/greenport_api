@@ -9,10 +9,16 @@ REST API for accessing ETH based smart contract for Greenport yourself token.
 - Run the following commands from the terminal:
     ```sh
     geth --testnet --rpc --rpcport=8545 console
-    personal.newAccount("your_password")
+    personal.newAccount('your_password')
     ```
+    - Replace `your address` inside `index.js` file with the address you get from the above command:
+        ```sh
+        var adminAddress = 'your_admin_address';
+        ```
+    - *NOTE*: Owner of _Greenport yourself_ smart contract needs to authorize an address, in order for it to be able to write to the blockchain (use the smart contract inside it). Once you create a new account (with the above command), you need to contact the owner to authorize you.
 
 ## Run
+
 - Run the following commands from the terminal:
     ```sh
     node index.js
@@ -20,7 +26,7 @@ REST API for accessing ETH based smart contract for Greenport yourself token.
 - The API endpoints are accessible with the following URLs:
 
     - General getters:
-    
+
       ```sh
         /name
         /decimals
@@ -33,21 +39,21 @@ REST API for accessing ETH based smart contract for Greenport yourself token.
         ```
 
     - General setters:
-        
+
         ```sh
         /delta_credit_award_factor
         /user/assign_credits
         /registration_credits/:amount
         ```
-        
+
     - User getters:
-        
+
         ```sh
         /user/:address/balance
         ```
-        
+
     - User setters:
-        
+
         ```sh
         /user/new
         /user/:address/transfer?toAddress=:toAddress&amount=:amount
